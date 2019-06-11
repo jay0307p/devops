@@ -38,21 +38,21 @@ echo "Deploying to $SERVER"
 #ssh -o StrictHostKeyChecking=no jayasimhaiit@${SERVER} << END_CONNECTION
 ssh jenkins@${SERVER} << END_CONNECTION
     # Clear the old version
-    rm -rf ${APP_HOME}/*
+    sudo rm -rf ${APP_HOME}/*
 
     # Build an expansion directory
-    mkdir -p ${UI__HOME_TEMP}
+    sudo mkdir -p ${UI__HOME_TEMP}
 
     # Get and expand the new version
-    wget --no-check-certificate --no-verbose -P ${UI__HOME_TEMP} https://archive.apache.org/${ARTIFACT_PATH}/${ARTIFACT_NAME}
-    tar -xzf ${UI__HOME_TEMP}/${ARTIFACT_NAME} -C ${UI__HOME_TEMP}
+    sudo wget --no-check-certificate --no-verbose -P ${UI__HOME_TEMP} https://archive.apache.org/${ARTIFACT_PATH}/${ARTIFACT_NAME}
+    sudo tar -xzf ${UI__HOME_TEMP}/${ARTIFACT_NAME} -C ${UI__HOME_TEMP}
 
     # Move the needed files from the temp folder to the root
-    mv ${UI__HOME_TEMP}/* ${APP_HOME}
-    rm -rf ${UI__HOME_TEMP}
+    sudo mv ${UI__HOME_TEMP}/* ${APP_HOME}
+    sudo rm -rf ${UI__HOME_TEMP}
 
     # Use correct config version
-    mv ${APP_HOME}/${CONFIG_NAME} ${APP_HOME}/config.tar.gz
+    sudo mv ${APP_HOME}/${CONFIG_NAME} ${APP_HOME}/config.tar.gz
 
     # Make sure owner is correct
     sudo chown -R jayasimhaiit:jayasimhaiit ${APP_HOME}/
