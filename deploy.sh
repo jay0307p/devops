@@ -2,7 +2,7 @@
 
 if [[ ${GIT_BRANCH} == *develop ]] 
 then
-	URLS=("35.184.234.66")
+	URLS=("35.184.234.66" "104.198.53.98")
     
 elif [[ ${GIT_BRANCH} == *release* ]] 
 then
