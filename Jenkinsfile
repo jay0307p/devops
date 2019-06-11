@@ -8,8 +8,7 @@ pipeline {
             sh 'echo ${BRANCH_NAME}'
             sh 'echo ${JOB_BASE_NAME}'
             sh 'echo ${COMPRESSEDBUILD}'
-            sh 'echo ${JOB_BASE_NAME}'
-              
+                          
           	}
         }
         stage('Deploy') {
