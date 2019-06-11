@@ -2,7 +2,7 @@
 
 if [[ ${GIT_BRANCH} == *develop ]] 
 then
-	URLS=("34.73.24.245")
+	URLS=("35.184.234.66")
     
 elif [[ ${GIT_BRANCH} == *release* ]] 
 then
@@ -25,8 +25,8 @@ if [ $SALESCHANNEL == "DS"]
     then
         APP_HOME="/opt/apps/www/mobile-token-generator-https"
         CONFIG_NAME="apache-tomcat-8.5.9.tar.gz"
-     #else
-     #	exit 1
+     else
+     	exit 1
     #     APP_HOME="/data/apps/www/retail-mobile-token-generator-https"
     #     CONFIG_NAME="config.development.retail.js"
 fi
