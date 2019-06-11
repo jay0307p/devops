@@ -14,6 +14,8 @@ pipeline {
                 script {
                     sh 'echo ---- Attempting to deploy application to ${GIT_BRANCH} environment servers. ----'
                     sh 'echo ---- Current branch being deployed: ${GIT_BRANCH} ----'
+                    sh 'chmod +x deploy.sh'
+                    sh 'chown -R jenkins:jenkins deploy.sh'
                     sh './deploy.sh'
                 }
             }
