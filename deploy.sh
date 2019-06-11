@@ -36,7 +36,7 @@ for SERVER in "${SERVERS[@]}"
 do
 echo "Deploying to $SERVER"
 #ssh -o StrictHostKeyChecking=no jayasimhaiit@${SERVER} << END_CONNECTION
-ssh jayasimhaiit@${SERVER} << END_CONNECTION
+ssh jenkins@${SERVER} << END_CONNECTION
     # Clear the old version
     rm -rf ${APP_HOME}/*
 
