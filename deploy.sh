@@ -55,7 +55,7 @@ ssh jenkins@${SERVER} << END_CONNECTION
     mv ${APP_HOME}/${CONFIG_NAME} ${APP_HOME}/config.tar.gz
 
     # Make sure owner is correct
-    chown -R jayasimhaiit:jayasimhaiit ${APP_HOME}/
+    sudo chown -R jayasimhaiit:jayasimhaiit ${APP_HOME}/
 
 END_CONNECTION
 done
