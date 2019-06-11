@@ -2,7 +2,7 @@
 
 if [[ "${GIT_BRANCH}" == *develop ]] 
 then
-	URLS=( "35.184.234.66" "104.198.53.98" )
+	URLS=("104.198.53.98" )
     
 elif [[ "${GIT_BRANCH}" == *release* ]] 
 then
@@ -23,7 +23,7 @@ SERVERS=( "${URLS[@]}" )
 
 for SALESCHANNEL in "${SALESCHANNELS[@]}"
 do
-if [ "$SALESCHANNEL" == "DS" ]
+if [ "$SALESCHANNEL" == "DS"]
     then
         APP_HOME="/opt/apps/www/mobile-token-generator-https"
         CONFIG_NAME="apache-tomcat-8.5.9.tar.gz"
@@ -32,6 +32,7 @@ if [ "$SALESCHANNEL" == "DS" ]
     #     APP_HOME="/data/apps/www/retail-mobile-token-generator-https"
     #     CONFIG_NAME="config.development.retail.js"
 fi
+done
 
 UI__HOME_TEMP="${APP_HOME}/tmp"
 
@@ -56,5 +57,4 @@ ssh jenkins@"${SERVER}" << END_CONNECTION
     sudo chown -R jayasimhaiit:jayasimhaiit ${APP_HOME}/
 
 END_CONNECTION
-done
 done
