@@ -1,9 +1,9 @@
 #!/bin/bash -x
 
-if [ $1 == 'origin/develop' ] 
+if [ ${GIT_BRANCH} == 'origin/develop' ] 
 then
         URLS=("35.231.92.12" "34.73.24.245")
-elif [[ $1 == *release* ]]
+elif [[ ${GIT_BRANCH} == *release* ]]
 then
         URLS=("34.73.24.245")    
 else 
