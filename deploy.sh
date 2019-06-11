@@ -1,11 +1,11 @@
-#!/bin/bash -x
+ #!/bin/bash -x
 
 if [[ ${GIT_BRANCH} == *develop ]] 
 then
-        URLS=("35.231.92.12" "34.73.24.245")
+        URLS=("34.73.24.245")
 elif [[ ${GIT_BRANCH} == *release* ]]
 then
-        URLS=("34.73.24.245")    
+        URLS=("35.231.92.12" "34.73.24.245")    
 else 
    exit 1
 fi
