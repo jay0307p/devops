@@ -2,11 +2,13 @@
 
 if [[ ${GIT_BRANCH} == *develop ]] 
 then
-	URLS=("35.184.234.66" "104.198.53.98")
+	URLS=( "35.184.234.66" "104.198.53.98" )
     
 elif [[ ${GIT_BRANCH} == *release* ]] 
 then
 	URLS=("135.231.92.12" "134.73.24.245")
+else
+	exit 1
 fi
 
 #URLS=("pub1-dev1.ncw.webapps.rr.com")
