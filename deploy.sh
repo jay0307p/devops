@@ -25,7 +25,8 @@ if [ $SALESCHANNEL == "DS"]
     then
         APP_HOME="/opt/apps/www/mobile-token-generator-https"
         CONFIG_NAME="apache-tomcat-8.5.9.tar.gz"
-    # else
+     else
+     	exit 1
     #     APP_HOME="/data/apps/www/retail-mobile-token-generator-https"
     #     CONFIG_NAME="config.development.retail.js"
 fi
