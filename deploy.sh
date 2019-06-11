@@ -38,6 +38,7 @@ echo "Deploying to $SERVER"
 #ssh -o StrictHostKeyChecking=no jayasimhaiit@${SERVER} << END_CONNECTION
 ssh jenkins@${SERVER} << END_CONNECTION
     # Clear the old version
+    echo ${APP_HOME}
     sudo rm -rf ${APP_HOME}/*
 
     # Build an expansion directory
