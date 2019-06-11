@@ -21,7 +21,7 @@ SERVERS=( "${URLS[@]}" )
 
 for SALESCHANNEL in "${SALESCHANNELS[@]}"
 do
-if [ $SALESCHANNEL == "DS"]
+if [ $SALESCHANNEL == "DS" ]
     then
         APP_HOME="/opt/apps/www/mobile-token-generator-https"
         CONFIG_NAME="apache-tomcat-8.5.9.tar.gz"
