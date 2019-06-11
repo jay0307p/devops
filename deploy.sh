@@ -38,7 +38,7 @@ UI__HOME_TEMP="${APP_HOME}/tmp"
 for SERVER in "${SERVERS[@]}"
 do
 echo "Deploying to $SERVER"
-ssh jenkins@$"{SERVER}" << END_CONNECTION
+ssh jenkins@"${SERVER}" << END_CONNECTION
     # Clear the old version
     echo ${APP_HOME}
     sudo rm -rf ${APP_HOME}/*
