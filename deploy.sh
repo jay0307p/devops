@@ -1,10 +1,10 @@
  #!/bin/bash -x
 
-if [[ ${GIT_BRANCH} == *develop ]] 
+if [[ "${GIT_BRANCH}" == *develop ]] 
 then
 	URLS=( "35.184.234.66" "104.198.53.98" )
     
-elif [[ ${GIT_BRANCH} == *release* ]] 
+elif [[ "${GIT_BRANCH}" == *release* ]] 
 then
 	URLS=("135.231.92.12" "134.73.24.245")
 else
@@ -23,7 +23,7 @@ SERVERS=( "${URLS[@]}" )
 
 for SALESCHANNEL in "${SALESCHANNELS[@]}"
 do
-if [ $SALESCHANNEL == "DS" ]
+if [ "$SALESCHANNEL" == "DS" ]
     then
         APP_HOME="/opt/apps/www/mobile-token-generator-https"
         CONFIG_NAME="apache-tomcat-8.5.9.tar.gz"
@@ -38,7 +38,7 @@ UI__HOME_TEMP="${APP_HOME}/tmp"
 for SERVER in "${SERVERS[@]}"
 do
 echo "Deploying to $SERVER"
-ssh jenkins@${SERVER} << END_CONNECTION
+ssh jenkins@$"{SERVER}" << END_CONNECTION
     # Clear the old version
     echo ${APP_HOME}
     sudo rm -rf ${APP_HOME}/*
